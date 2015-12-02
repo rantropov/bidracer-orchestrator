@@ -1,0 +1,7 @@
+/.*
+!/.gitignore
+/.vagrant/*
+/.ssh/*
+/.ssh/rackspace_rsa
+/.ssh/rackspace_rsa.pub
+.env
