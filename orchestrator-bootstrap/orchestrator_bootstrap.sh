@@ -48,7 +48,7 @@ cd bidracer-core
 ###################################################################
 echo "\nSetting up Vagrantfile, SSH Keys and .env file to build RTBKit machine"
 rm -rf Vagrantfile
-cp /vagrant/ac-bootstrap/Vagrantfile_rtbkit ./Vagrantfile
+cp ./ac-bootstrap/Vagrantfile_rtbkit ./Vagrantfile
 cp -r $HOME/bid-racer/.ssh ./.ssh
 cp $HOME/bid-racer/orchestrator-bootstrap/.env_bidracer_core ./.env
 sleep 4
