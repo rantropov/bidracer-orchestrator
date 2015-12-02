@@ -50,7 +50,7 @@ echo "\nSetting up Vagrantfile, SSH Keys and .env file to build RTBKit machine"
 rm -rf Vagrantfile
 cp ./ac-bootstrap/Vagrantfile_rtbkit ./Vagrantfile
 cp -r $HOME/bid-racer/.ssh ./.ssh
-cp $HOME/bid-racer/orchestrator-bootstrap/.env_bidracer_core ./.env
+cp $HOME/bid-racer/.env ./.env
 sleep 4
 ###################################################################
 echo "\nStarting vagrant up in tmux session : vagrant_bidracer_core"
@@ -68,7 +68,7 @@ cd $HOME
 git clone --depth=1 --branch=master https://github.com/bidracer/bidracer-adserver.git
 cd bidracer-adserver
 cp -r $HOME/bid-racer/.ssh ./.ssh
-cp $HOME/bid-racer/orchestrator-bootstrap/.env_bidracer_adserver ./.env
+cp $HOME/bid-racer/.env ./.env
 ###################################################################
 echo "\nStarting vagrant up in tmux session : vagrant_bidracer_adserver"
 tmux new-session -d -s vagrant_bidracer_adserver
@@ -85,7 +85,7 @@ cd $HOME
 git clone --depth=1 --branch=master https://github.com/bidracer/bidracer-ui.git
 cd bidracer-ui
 cp -r $HOME/bid-racer/.ssh ./.ssh
-cp $HOME/bid-racer/orchestrator-bootstrap/.env_bidracer_ui ./.env
+cp $HOME/bid-racer/.env ./.env
 ###################################################################
 echo "\nStarting vagrant up in tmux session : vagrant_bidracer_ui"
 tmux new-session -d -s vagrant_bidracer_ui
