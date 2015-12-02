@@ -45,8 +45,13 @@ apt-get --assume-yes install git-core > /dev/null
 cd $HOME
 git clone --depth=1 --branch=master https://github.com/bidracer/bidracer-core.git
 cd bidracer-core
+###################################################################
+echo "\nSetting up Vagrantfile, SSH Keys and .env file to build RTBKit machine"
+rm -rf Vagrantfile
+cp /vagrant/ac-bootstrap/Vagrantfile_rtbkit ./Vagrantfile
 cp -r $HOME/bid-racer/.ssh ./.ssh
 cp $HOME/bid-racer/orchestrator-bootstrap/.env_bidracer_core ./.env
+sleep 4
 ###################################################################
 echo "\nStarting vagrant up in tmux session : vagrant_bidracer_core"
 tmux new-session -d -s vagrant_bidracer_core
