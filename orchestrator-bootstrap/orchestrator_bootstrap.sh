@@ -53,13 +53,13 @@ cp -r $HOME/bid-racer/.ssh ./.ssh
 cp $HOME/bid-racer/.env ./.env
 sleep 4
 ###################################################################
-echo "\nStarting vagrant up in tmux session : vagrant_bidracer_core"
-tmux new-session -d -s vagrant_bidracer_core
-tmux send-keys -t vagrant_bidracer_core  'vagrant up 2>&1 | tee $logs/vagrantup_bidracer_core_log.log'
-tmux send-keys -t vagrant_bidracer_core  Enter
+echo "\nStarting vagrant up in tmux session : bc"
+tmux new-session -d -s bc
+tmux send-keys -t bc  'vagrant up 2>&1 | tee $logs/vagrantup_bidracer_core_log.log'
+tmux send-keys -t bc  Enter
 sleep 4
-echo "\nDetaching from tmux session : vagrant_bidracer_core"
-tmux detach -s vagrant_bidracer_core
+echo "\nDetaching from tmux session : bc"
+tmux detach -s bc
 sleep 4
 ###################################################################
 # Start Vagrant up for bidracer-adserver
@@ -70,13 +70,13 @@ cd bidracer-adserver
 cp -r $HOME/bid-racer/.ssh ./.ssh
 cp $HOME/bid-racer/.env ./.env
 ###################################################################
-echo "\nStarting vagrant up in tmux session : vagrant_bidracer_adserver"
-tmux new-session -d -s vagrant_bidracer_adserver
-tmux send-keys -t vagrant_bidracer_adserver  'vagrant up 2>&1 | tee $logs/vagrantup_bidracer_adserver_log.log'
-tmux send-keys -t vagrant_bidracer_adserver  Enter
+echo "\nStarting vagrant up in tmux session : bas"
+tmux new-session -d -s bas
+tmux send-keys -t bas  'vagrant up 2>&1 | tee $logs/vagrantup_bidracer_adserver_log.log'
+tmux send-keys -t bas  Enter
 sleep 4
-echo "\nDetaching from tmux session : vagrant_bidracer_adserver"
-tmux detach -s vagrant_bidracer_adserver
+echo "\nDetaching from tmux session : bas"
+tmux detach -s bas
 sleep 4
 ###################################################################
 # Start Vagrant up for bidracer-ui
@@ -87,13 +87,13 @@ cd bidracer-ui
 cp -r $HOME/bid-racer/.ssh ./.ssh
 cp $HOME/bid-racer/.env ./.env
 ###################################################################
-echo "\nStarting vagrant up in tmux session : vagrant_bidracer_ui"
-tmux new-session -d -s vagrant_bidracer_ui
-tmux send-keys -t vagrant_bidracer_ui  'vagrant up 2>&1 | tee $logs/vagrantup_bidracer_ui_log.log'
-tmux send-keys -t vagrant_bidracer_ui  Enter
+echo "\nStarting vagrant up in tmux session : bui"
+tmux new-session -d -s bui
+tmux send-keys -t bui  'vagrant up 2>&1 | tee $logs/vagrantup_bidracer_ui_log.log'
+tmux send-keys -t bui  Enter
 sleep 4
-echo "\nDetaching from tmux session : vagrant_bidracer_ui"
-tmux detach -s vagrant_bidracer_ui
+echo "\nDetaching from tmux session : bui"
+tmux detach -s bui
 sleep 4
 ###################################################################
 #Display info to the user
@@ -111,11 +111,11 @@ echo "\nSSH into orchestration machine to see the status of the build using tmux
 sleep 2
 echo "\nCommand to list tmux sessions is 'tmux list-sessions'"
 sleep 2
-echo "\nCommand to check bidracer-core status 'tmux attach -t vagrant_bidracer_core'"
+echo "\nCommand to check bidracer-core status 'tmux attach -t bc'"
 sleep 2
-echo "\nCommand to check bidracer-adserver status 'tmux attach -t vagrant_bidracer_adserver'"
+echo "\nCommand to check bidracer-adserver status 'tmux attach -t bas'"
 sleep 2
-echo "\nCommand to check bidracer-ui status 'tmux attach -t vagrant_bidracer_ui'"
+echo "\nCommand to check bidracer-ui status 'tmux attach -t bui'"
 sleep 2
 echo "\n####################################################################"
 echo "++++++++++++++++++++++++++++ Have fun ++++++++++++++++++++++++++++++"
