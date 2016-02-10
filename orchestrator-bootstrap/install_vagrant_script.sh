@@ -17,7 +17,7 @@ echo "\nInstalling Vagrant on controller node"
 ###################################################################
 cd $HOME
 apt-get --assume-yes install dpkg-dev > /dev/null
-wget --quiet https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
+wget --quiet https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
 dpkg -i vagrant_1.7.4_x86_64.deb > /dev/null
 vagrant plugin install vagrant-rackspace > /dev/null
 vagrant plugin install vagrant-env > /dev/null
